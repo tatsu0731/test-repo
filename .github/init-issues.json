@@ -1,14 +1,26 @@
 [
     {
-        "title": "リポジトリ準備: READMEの更新",
-        "body": "README.md にプロジェクトの概要を書きましょう！"
+        "title": "[section1]Headerの作成",
+        "body": "## ✅ やることリスト\n\n- [ ] リポジトリをローカルにクローンする\n- [ ] `README.md` を更新する\n- [ ] GitHub Pagesの設定を確認する\n\n---\n\n### 📌 参考リンク\n- [Gitの基本操作まとめ](https://example.com/git-guide)\n- [開発フロー](https://example.com/dev-flow)\n\n📝 必要であれば画像やコードブロックもOK！",
+        "labels": ["design", "review"],
+        "assignees": ["your-github-username"]
     },
     {
-        "title": "GitHubの基本操作を確認しよう",
-        "body": "clone, branch, commit, push の手順を確認して、PRを出してみましょう。"
+        "title": "[section1]Headerの作成",
+        "body": "## ✅ やることリスト\n\n- [ ] リポジトリをローカルにクローンする\n- [ ] `README.md` を更新する\n- [ ] GitHub Pagesの設定を確認する\n\n---\n\n### 📌 参考リンク\n- [Gitの基本操作まとめ](https://example.com/git-guide)\n- [開発フロー](https://example.com/dev-flow)\n\n📝 必要であれば画像やコードブロックもOK！",
+        "labels": ["design", "review"],
+        "assignees": ["your-github-username"]
     },
     {
-        "title": "Issue駆動開発を体験する",
-        "body": "このIssueを使って、タスク管理の基本的な流れを覚えましょう。"
+        "title": "[section1]Headerの作成",
+        "body": "### 🛠 使用技術\n- React\n- TypeScript\n- Vite\n\n### 💡 セットアップ手順\n```\nnpm install\nnpm run dev\n```\n\n---\n\n担当: @your-name",
+        "labels": ["design", "review"],
+        "assignees": ["your-github-username"]
+    },
+    {
+        "title": "[section1]Headerの作成",
+        "body": "[section1]Headerの作成",
+        "labels": ["design", "review"],
+        "assignees": ["your-github-username"]
     }
 ]
