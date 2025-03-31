@@ -10,13 +10,23 @@ on:
 jobs:
   create_issues:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Create Issues from JSON
-        uses: peter-evans/create-issue-from-file@v4
+      - name: Load and Create Issues
+        uses: actions/github-script@v6
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          title: ${{ fromJson(needs.prepare.outputs.issue_title) }}
-          content-filepath: .github/init-issues.json
+          script: |
+            const fs = require('fs');
+            const issues = JSON.parse(fs.readFileSync('.github/init-issues.json', 'utf8'));
+
+            for (const issue of issues) {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: issue.title,
+                body: issue.body
+              });
+            }
