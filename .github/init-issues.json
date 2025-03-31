@@ -13,7 +13,7 @@
     },
     {
         "title": "[section1]Headerの作成",
-        "body": "### 🛠 使用技術\n- React\n- TypeScript\n- Vite\n\n### 💡 セットアップ手順\n```\nnpm install\nnpm run dev\n```\n\n---\n\n担当: @your-name",
+        "body": "### 🛠 使用技術\n- React\n- TypeScript\n- Vite\n\n### 💡 セットアップ手順\n```\nnpm install\nnpm run dev\n```\n\n---\n\n担当: ",
         "labels": ["design", "review"],
         "assignees": ["your-github-username"]
     },
