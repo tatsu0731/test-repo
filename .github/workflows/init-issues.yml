@@ -19,11 +19,13 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
+        with:
+          ref: main
 
       - name: Create Issues from JSON
         uses: actions/github-script@v6
         with:
-          github-token: ${{ secrets.PERSONAL_TOKEN }}
+          github-token: ${{ secrets.PERSONAL_TOKEN }} 
           script: |
             const fs = require('fs');
             const issues = JSON.parse(fs.readFileSync('.github/init-issues.json', 'utf8'));
