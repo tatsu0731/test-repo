@@ -1,11 +1,6 @@
-name: Init Multiple Issues
+name: Init Issues
 
 on:
-  push:
-    paths:
-      - '.github/init-issues.json'
-    branches:
-      - main
   workflow_dispatch:
 
 permissions:
@@ -15,17 +10,13 @@ permissions:
 jobs:
   create_issues:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
-        with:
-          ref: main
+      - uses: actions/checkout@v3
 
-      - name: Create Issues from JSON
+      - name: Load and create issues from JSON
         uses: actions/github-script@v6
         with:
-          github-token: ${{ secrets.PERSONAL_TOKEN }} 
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const fs = require('fs');
             const issues = JSON.parse(fs.readFileSync('.github/init-issues.json', 'utf8'));
@@ -36,7 +27,6 @@ jobs:
                 repo: context.repo.repo,
                 title: issue.title,
                 body: issue.body,
-                labels: issue.labels,
-                assignees: issue.assignees
+                labels: issue.labels || []
               });
             }
